@@ -1,0 +1,24 @@
+n = 2
+number = int(input('求めたい素数を入力してください'))
+
+if number < 2:
+  print('2未満は素数ではありません')
+elif number % 2 == 0:
+  print('2で割れるため' + str(number) + 'は素数です')
+
+else:
+  print('2で割ることができないため' + str(number) + 'は素数ではありません')
+  #ループ開始
+  for i in range(2,number):
+    n += 1
+    answer = number / n
+    if answer.is_integer() == True:
+      print(str(n) + 'で割れました')
+      if number == n:
+        print(str(number) + 'は素数です')
+        break
+      else:
+        print(str(number) + 'は素数ではありません')
+        break
+    else:
+      continue
